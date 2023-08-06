@@ -210,7 +210,7 @@ class mqtt_interface():
                 if register['pub_topic'] not in json_messages:
                     json_messages[register['pub_topic']] = OrderedDict()
                     json_messages_retain[register['pub_topic']] = False
-                    json_messages_sort[register['pub_topic']] = register['sort_json_keys']
+                    json_messages_sort[register['pub_topic']] = register['json_key']
                     json_messages_changed[register['pub_topic']] = changed
                 set_json_message_value(json_messages[register['pub_topic']], register['json_key'], value)
                 if changed and not register.get('json_ignore_changed', False):
